@@ -9,8 +9,10 @@
       "Courier New", monospace;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
+    --text-xl: 1.25rem;
     --text-2xl: 1.5rem;
     --font-weight-medium: 500;
     --font-weight-extrabold: 800;
@@ -174,6 +176,9 @@
   .static {
     position: static;
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -183,11 +188,11 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
+  }
+  .h-\[200px\] {
+    height: 200px;
   }
   .h-\[522px\] {
     height: 522px;
@@ -200,6 +205,9 @@
   }
   .w-\[82px\] {
     width: 82px;
+  }
+  .w-\[327px\] {
+    width: 327px;
   }
   .w-\[384px\] {
     width: 384px;
@@ -257,15 +265,21 @@
     --tw-shadow: 8px 8px var(--tw-shadow-color, rgba(0, 0, 0, 1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .hover\:animate-shadow {
     &:hover {
       @media (hover: hover) {
         animation: var(--animate-shadow);
       }
+    }
+  }
+  .sm\:h-\[522px\] {
+    @media (width >= 40rem) {
+      height: 522px;
+    }
+  }
+  .sm\:w-\[384px\] {
+    @media (width >= 40rem) {
+      width: 384px;
     }
   }
 }
@@ -277,11 +291,15 @@
 @layer components {
   .blog-text-preset-1 {
     font-family: var(--font-figtree);
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     line-height: var(--leading-normal);
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
     color: var(--color-blog-gray-950);
+    @media (width >= 40rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--leading-normal);
+    }
   }
   article:hover .blog-text-preset-1 {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -289,27 +307,39 @@
   }
   .blog-text-preset-2 {
     font-family: var(--font-figtree);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     color: var(--color-blog-gray-500);
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+    }
   }
   .blog-text-preset-3 {
     font-family: var(--font-figtree);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     line-height: var(--leading-normal);
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     color: var(--color-blog-gray-950);
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--leading-normal);
+    }
   }
   .blog-text-preset-3-bold {
     font-family: var(--font-figtree);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     line-height: var(--leading-normal);
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
     color: var(--color-blog-gray-950);
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--leading-normal);
+    }
   }
 }
 @property --tw-rotate-x {
@@ -402,11 +432,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -442,7 +467,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-font-weight: initial;
     }
   }

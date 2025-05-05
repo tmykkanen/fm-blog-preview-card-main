@@ -25,7 +25,7 @@
 
 @layer components {
 	.blog-text-preset-1 {
-		@apply font-figtree text-blog-gray-950 text-2xl/normal font-extrabold;
+		@apply font-figtree text-blog-gray-950 text-xl/normal font-extrabold sm:text-2xl/normal;
 	}
 
 	article:hover .blog-text-preset-1 {
@@ -33,12 +33,12 @@
 	}
 
 	.blog-text-preset-2 {
-		@apply font-figtree text-blog-gray-500 text-base/normal font-medium;
+		@apply font-figtree text-blog-gray-500 text-sm/normal font-medium sm:text-base/normal;
 	}
 	.blog-text-preset-3 {
-		@apply font-figtree text-blog-gray-950 text-sm/normal font-medium;
+		@apply font-figtree text-blog-gray-950 text-xs/normal font-medium sm:text-sm/normal;
 	}
 	.blog-text-preset-3-bold {
-		@apply font-figtree text-blog-gray-950 text-sm/normal font-extrabold;
+		@apply font-figtree text-blog-gray-950 text-xs/normal font-extrabold sm:text-sm/normal;
 	}
 }
