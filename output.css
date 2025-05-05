@@ -173,11 +173,20 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
   .static {
     position: static;
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-40 {
+    margin-top: calc(var(--spacing) * 40);
   }
   .box-border {
     box-sizing: border-box;
