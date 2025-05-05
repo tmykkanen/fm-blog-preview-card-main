@@ -1,1 +1,44 @@
 @import 'tailwindcss';
+@font-face {
+	font-family: Figtree;
+	src: url('./assets/fonts/Figtree-VariableFont_wght.ttf');
+	font-weight: 300 900;
+}
+
+@theme {
+	--color-blog-yellow: #f4d04e;
+	--color-blog-gray-950: #111111;
+	--color-blog-gray-500: #6b6b6b;
+	--shadow-blog: 8px 8px rgba(0, 0, 0, 1);
+	--font-figtree: 'Figtree', 'sans-serif';
+
+	--animate-shadow: shadow 200ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+	@keyframes shadow {
+		from {
+			box-shadow: 8px 8px rgba(0, 0, 0, 1);
+		}
+		to {
+			box-shadow: 16px 16px rgba(0, 0, 0, 1);
+		}
+	}
+}
+
+@layer components {
+	.blog-text-preset-1 {
+		@apply font-figtree text-blog-gray-950 text-2xl/normal font-extrabold;
+	}
+
+	article:hover .blog-text-preset-1 {
+		@apply text-blog-yellow transform;
+	}
+
+	.blog-text-preset-2 {
+		@apply font-figtree text-blog-gray-500 text-base/normal font-medium;
+	}
+	.blog-text-preset-3 {
+		@apply font-figtree text-blog-gray-950 text-sm/normal font-medium;
+	}
+	.blog-text-preset-3-bold {
+		@apply font-figtree text-blog-gray-950 text-sm/normal font-extrabold;
+	}
+}
